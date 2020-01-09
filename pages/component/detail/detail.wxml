@@ -1,0 +1,65 @@
+<!--pages/component/detail/detail.js.wxml-->
+<view class="main-container">
+    <view class="goods-box">
+        <block wx:if="{{goods.images.length > 0}}">
+            <swiper style="height: 500rpx" indicator-dots="true"  interval="{{timeInterval}}" duration="{{durationTime}}"   circular  autoplay>
+                <swiper-item wx:for="{{goods.images}}" wx:key="id" >
+                    <image src="{{item}}" class="goods-thumb" />
+                </swiper-item>
+            </swiper>
+        </block>
+        <block wx:else> 
+            <image src="{{goods.imgSrc}}" class="goods-thumb" />
+        </block>
+       <view class="goods-product">
+           <view class="goods-price" wx:if="{{goods.price}}"><text class="product-price">￥</text>{{goods.price}}</view>
+          <view class="goods-title">{{goods.carName}}</view>
+       </view>
+        
+    </view>
+    <!--活动介绍-->
+    <view class="goods-active">
+        <view class="goods-active-detail">活动进行中，尽情购买！</view>
+    </view>
+    <!--详情分类-->
+    <view class="goods-tab-box">
+      <view class="goods-tab-nav {{curIndex === 0 ? 'on': ''}}" bindtap="bindTap" data-index="0">图片详情</view>
+      <view class="goods-tab-nav {{curIndex === 1 ? 'on': ''}}" bindtap="bindTap" data-index="1">产品描述</view>
+      <view class="goods-tab-nav {{curIndex === 2 ? 'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
+      <view class="goods-content">
+          <view wx:if="{{curIndex === 0}}" class="goods-detail">
+              <view class="goods-text">{{goods.description}}</view>
+              <view wx:if="{{goods.imgDetail}}" class="image-con">
+                  <image wx:for="{{goods.imgDetail}}" src="{{item}}"></image>
+              </view>
+          </view>
+          <view wx:if="{{curIndex === 1}}">
+              <view wx:for="{{goods.productDes}}">
+                  <view class="goods-text">{{item}}</view>
+              </view>
+              <view wx:if="{{goods.productDesImage}}">
+                  <view wx:for="{{goods.productDesImage}}">
+                      <image src="{{item}}"></image>
+                  </view>
+              </view>
+          </view>
+          <view wx:if="{{curIndex === 2}}">{{goods.service}}</view>
+      </view>
+    </view>
+    <view class="footer-box">
+        <view class="shopcar-con">
+            <navigator open-type="switchTab" url="../cart/cart">
+              <view class="carts-icon {{scaleCart ? 'on' : ''}}">
+                <image src="/images/icon_shop_cart.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+              </view>
+            </navigator>
+        </view>
+        <view class="goods-operation">
+            <text class="goods-operation-num">数量 {{num}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
+            <!-- <image src="/images/icon_shop_cart.png"  class="goods-cart-img" bindtap="addToCart"></image> -->
+        </view>
+    </view>
+</view>

@@ -1,0 +1,112 @@
+@import "../../../common/common.wxss";
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  /* background: #46bee9; */
+  background: linear-gradient(45deg,#f3b270 0%,#f1a166 30%,#ef996a 60%, #ef8762 95%, #ef8168 100%);
+  
+}
+.userinfo .nologin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.loginBtn-con {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 160rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+/*#f3b270,#f1a166,#ef996a,#ef8762,#ef8168,#eb7662*/
+.userinfo-nickname {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 170rpx;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: normal;
+}
+button.userinfo-login {
+  display: inline-block;
+  vertical-align: middle;
+  /* line-height: 70rpx; */
+  height: 70rpx;
+  color: #212121;
+  background: #fff;
+  font-weight: normal;
+  min-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: normal;
+  margin-bottom: 10px;
+}
+
+.user-order{
+  margin: 30rpx 0rpx 0rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 2px 1px 2px #ccc;
+  font-size: 32rpx;
+}
+.user-text {
+  padding-left: 10rpx;
+}
+.order-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx;
+} 
+.user-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 70rpx;
+  border-bottom: 1px solid #eeeeee;
+
+}
+.next {
+  width: 40rpx;
+  height: 40rpx;
+}
+.order-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.order-item image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.order-list{
+  margin: 30rpx 0rpx 40rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 1px 1px 3px #ccc;
+  font-size: 32rpx;
+}
+.order-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.order-list-item:last-child{
+  border-bottom: none;
+}
