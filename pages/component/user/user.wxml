@@ -1,8 +1,8 @@
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{!hasUserInfo}}">
+    <block wx:if="{{!hasUserInfo && canIUse}}">
           <view class="nologin">
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="../../../images/loginout.jpg" mode="cover"></image>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="../../../images/loginout.png" mode="cover"></image>
             <button class="userinfo-login" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
           </view>
     </block>
@@ -52,6 +52,12 @@
       <view class="order-list-item">
         <text>我的地址</text>
         <image src="../../../images/next.png" class="next"></image>
+      </view>
+  </view>
+  <view class="order-list" style="margin-top: 0px;">
+      <view class="order-list-item">
+        <text>咨询热线：刘生13728933796</text>
+        <text> </text>
       </view>
   </view>
    <!-- <button class="loginOut" bindtap="loginOut">退出登录</button> -->

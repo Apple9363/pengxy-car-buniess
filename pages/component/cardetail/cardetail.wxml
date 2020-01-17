@@ -1,52 +1,54 @@
-<!--pages/component/detail/detail.js.wxml-->
+<!--pages/component/cardetail/cardetail.wxml-->
 <view class="main-container">
     <view class="goods-box">
         <block wx:if="{{goods.images.length > 0}}">
-            <swiper style="height: 550rpx" indicator-dots="true"  interval="{{timeInterval}}" duration="{{durationTime}}"   circular  autoplay>
-                <swiper-item wx:for="{{goods.images}}" wx:for-item="item" wx:key="{{id}}">
+            <swiper style="height: 486rpx" indicator-dots="true"  interval="{{timeInterval}}" duration="{{durationTime}}"   circular  autoplay>
+                <swiper-item wx:for="{{goods.images}}" wx:for-item="item" wx:key="{{id}}" >
                   <scroll-view>
                     <image  wx:if="{{item}}" lazy-load="true" cache="true" src="{{item}}" class="goods-thumb"/>
-                  </scroll-view>                   
+                  </scroll-view>
                 </swiper-item>
             </swiper>
         </block>
         <block wx:else> 
-          <scroll-view>
-            <image  wx:if="{{goods.imgSrc}}" lazy-load="true" cache="true"  src="{{goods.imgSrc}}" class="goods-thumb" />
-          </scroll-view>            
+            <image wx:if="{{goods.imgSrc}}" lazy-load="true" cache="true" src="{{goods.imgSrc}}" class="goods-thumb" />  
         </block>
        <view class="goods-product">
-           <view class="goods-price" wx:if="{{goods.price}}"><text class="product-price">￥</text>{{goods.price}}</view>
+           <!-- <view class="goods-price" wx:if="{{goods.price}}"><text class="product-price">￥</text>{{goods.price}}</view> -->
           <view class="goods-title">{{goods.carName}}</view>
        </view>
         
     </view>
     <!--活动介绍-->
     <view class="goods-active">
-        <view class="goods-active-detail">活动进行中，欢迎查看！</view>
+        <view class="goods-active-detail">欢迎查看汽车详情！</view>
     </view>
     <!--详情分类-->
     <view class="goods-tab-box">
       <view class="goods-tab-nav {{curIndex === 0 ? 'on': ''}}" bindtap="bindTap" data-index="0">图片详情</view>
-      <view class="goods-tab-nav {{curIndex === 1 ? 'on': ''}}" bindtap="bindTap" data-index="1">产品描述</view>
+      <view class="goods-tab-nav {{curIndex === 1 ? 'on': ''}}" bindtap="bindTap" data-index="1">商品信息</view>
       <view class="goods-tab-nav {{curIndex === 2 ? 'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
       <view class="goods-content">
           <view wx:if="{{curIndex === 0}}" class="goods-detail">
+              
               <view class="goods-text">{{goods.description}}</view>
-              <view wx:if="{{goods.imgDetail}}" class="image-con">
+              <view wx:if="{{goods.imgDetail}}" class="car-images-con {{goods.id !== 1 ? 'car-heig' : ''}}">
                 <scroll-view wx:for="{{goods.imgDetail}}" wx:for-item="item" wx:key="{{id}}">
-                  <image wx:if="{{item}}" lazy-load="true" cache="true" src="{{item}}" ></image>
+                  <image wx:if="{{item}}"  lazy-load="true" cache="true"  src="{{item}}" ></image>
                 </scroll-view>
               </view>
+              <image src="/images/publicNum.jpg" style="height:110px;width: 100%;"></image>
           </view>
           <view wx:if="{{curIndex === 1}}">
               <view wx:for="{{goods.productDes}}">
                   <view class="goods-text">{{item}}</view>
               </view>
               <view wx:if="{{goods.productDesImage}}">
-                  <scroll-view wx:for="{{goods.productDesImage}}" wx:for-item="item" wx:key="{{id}}">
-                      <image wx:if="{{item}}" lazy-load="true" cache="true" src="{{item}}" ></image>
-                  </scroll-view>
+                <scroll-view>
+                  <view wx:for="{{goods.productDesImage}}" wx:for-item="item" wx:key="{{id}}">
+                      <image wx:if="{{item}}" src="{{item}}" lazy-load="true" cache="true"></image>
+                  </view>
+                </scroll-view>
               </view>
           </view>
           <view wx:if="{{curIndex === 2}}">{{goods.service}}</view>
@@ -65,7 +67,7 @@
             <text class="goods-operation-num">数量 {{num}}</text>
             <text class="goods-operation-add" bindtap="addCount">+</text>
             <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
-            <!-- <image src="/images/icon_shop_cart.png"  class="goods-cart-img" bindtap="addToCart"></image> -->
         </view>
     </view>
 </view>
+

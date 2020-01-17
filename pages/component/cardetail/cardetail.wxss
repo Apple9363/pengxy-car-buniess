@@ -1,0 +1,13 @@
+/* pages/component/cardetail/cardetail.wxss */
+@import '../detail/detail.wxss';
+.goods-detail .car-images-con{
+  text-align: center;
+}
+.goods-detail .car-images-con image {
+  width: 100%;
+  height: 800px;
+}
+.goods-detail .car-images-con.car-heig image {
+  width: 100%;
+  height: 600px;
+}

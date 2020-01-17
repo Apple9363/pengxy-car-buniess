@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="main">
     <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
-      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <block wx:for="{{imgUrls}}" wx:for-item="item" wx:key="{{index}}"> 
           <swiper-item>
-              <image src="{{item}}" class="slide-image" width="100%" /> 
+               <image wx:if="{{item.url}}" src="{{item.url}}" class="slide-image" width="100%" lazy-load="true" cache="true"/>  
           </swiper-item>
       </block>
     </swiper> 
@@ -16,16 +16,16 @@
       </navigator>
     </view> -->
     <view class="selected">
-        <view class="select-title">汽车服务-车源/金融/车务</view>
+        <view class="select-title">汽车服务-新能源/汽车车务</view>
         <view class="select-bottom">
             <view bindtap="tabDetail" data-postad="{{mainCar}}">
-                <image src="{{mainCar.imgSrc}}"></image>
+                <image wx:if="{{mainCar.imgSrc}}" src="{{mainCar.imgSrc}}" lazy-load="true" cache="true"></image>
             </view>
         </view>
         <view class="select-top">
-            <view wx:for="{{newCarList}}" wx:key="{{item.id}}" class="select-top-small">
+            <view wx:for="{{newCarList}}" wx:for-item="item" wx:key="{{id}}" class="select-top-small">
                 <view bindtap="tabDetail" data-postad="{{item}}">
-                    <image src="{{item.imgSrc}}"></image>
+                    <image wx:if="{{item.imgSrc}}" src="{{item.imgSrc}}" lazy-load="true" cache="true"></image>
                 </view>
             </view>
         </view>
@@ -34,12 +34,12 @@
     <view class="newest">
         <view class="newest-title"><text>热销爆款！智能新能源汽车</text></view>
         <view class="goods-box">
-            <view class="goods-list" wx:for="{{carList}}" wx:key="{{item.id}}">                       
-                <view bindtap="tabDetail" data-postad="{{item}}">
-                    <image src="{{item.imgSrc}}"></image>
+            <view class="goods-list" wx:for="{{carList}}" wx:for-item="item" wx:key="{{id}}">                       
+                <scroll-view bindtap="carTabDetail" data-postad="{{item}}">
+                    <image wx:if="{{item.imgSrc}}" src="{{item.imgSrc}}" lazy-load="true" cache="true"></image>
                     <view class="goods-text"><text>{{item.carName}}</text></view>
-                    <view class="goods-price"><text><text class="product-price">￥</text>{{item.price}}</text></view>
-                </view>
+                    <!-- <view class="goods-price"><text><text class="product-price">￥</text>{{item.price}}</text></view> -->
+                </scroll-view>
             </view>
         </view>
     </view>

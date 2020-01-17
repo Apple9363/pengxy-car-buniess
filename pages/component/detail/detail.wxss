@@ -13,11 +13,11 @@
 }
 .goods-box .goods-thumb{
     width: 100%;
-    height: 500rpx;
-    margin: 0rpx 0 25rpx;
+    height: 550rpx;
+    /* margin: 0rpx 0 25rpx; */
 }
 .goods-tab-box {
-  min-height: 500rpx;
+  min-height: 625rpx;
 }
 .goods-tab-box,
 .goods-box {
@@ -193,7 +193,11 @@
 .goods-text {
   margin-bottom: 25rpx;
   font-size: 36rpx;
+  /* color: rgb(237,123,53); */
+}
+.goods-detail .image-con{
+  text-align: center;
 }
 .goods-detail .image-con> image {
-  width: 304px;
+  width: 290px;
 }

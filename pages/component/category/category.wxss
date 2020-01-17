@@ -45,7 +45,7 @@ page,.main{
     padding:30rpx 0 55rpx;
     text-align: center;
     color: #ed7b35;
-    font-size: 28rpx;
+    font-size: 32rpx;
 }
 .cate-title::before{
     position: absolute;

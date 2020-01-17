@@ -7,27 +7,35 @@ Page({
         category: [
           {
             id: 'newEnergy',
-            name: '新能源', 
-            category: 'SUV',                  
-            bannerUri: '../../../images/car1.jpg',
+            name: '拼团专场', 
+            category: '新能源汽车',                  
+            bannerUri: 'https://upload-images.jianshu.io/upload_images/9607275-2c6e79902cc1de47.jpg',
             children: [
               {
                 id: 1,
-                imgSrc: '../../../images/car1.jpg',
-                carName: 'suv',
-                price: '23万',
+                imgSrc: 'https://upload-images.jianshu.io/upload_images/9607275-2c6e79902cc1de47.jpg',
+                carName: 'EU7',
+                price: '15.99万-17.59万',
                 setting: '系统配置',
-                description: '详情描述',
-                service: '一年内包维修'
+                description: '新能源汽车详情描述',
+                productDes: ['新能源汽车'],
+                imgDetail: [
+                  'https://upload-images.jianshu.io/upload_images/9607275-2c6e79902cc1de47.jpg'
+                ],
+                service: '5年50万公里厂家电池质保'
               },
               {
                 id: 2,
-                imgSrc: '../../../images/car1.jpg',
-                carName: 'suv2',
-                price: '23万',
+                imgSrc: 'https://upload-images.jianshu.io/upload_images/9607275-79cccedb123bce7d.jpg',
+                carName: 'EU5',
+                price: '13.29万-17.19万',
                 setting: '系统配置',
-                description: '详情描述',
-                service: '一年内包维修'
+                description: '新能源汽车详情描述',
+                productDes: ['新能源汽车'],
+                imgDetail: [
+                  'https://upload-images.jianshu.io/upload_images/9607275-79cccedb123bce7d.jpg'
+                ],
+                service: '5年50万公里厂家电池质保'
               },
             ]
           },

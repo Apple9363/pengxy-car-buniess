@@ -4,7 +4,8 @@
     "pages/component/category/category",
     "pages/component/cart/cart",
     "pages/component/user/user",
-    "pages/component/detail/detail"
+    "pages/component/detail/detail",
+    "pages/component/cardetail/cardetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,12 +27,6 @@
         "iconPath": "images/icon_home.png",
         "selectedIconPath": "images/icon_home_active.png",
         "text": "主页"
-      },
-      {
-        "pagePath": "pages/component/category/category",
-        "iconPath": "images/icon_classify.png",
-        "selectedIconPath": "images/icon_classify_active.png",
-        "text": "分类"
       },
       {
         "pagePath": "pages/component/cart/cart",

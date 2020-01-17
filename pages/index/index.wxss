@@ -55,7 +55,7 @@ swiper-item image {
 }
 .goods-box .goods-list{
   width: 340rpx;
-  height: 370rpx;
+  /* height: 370rpx; */
   background-color: #fff;
   overflow: hidden;
   margin-bottom: 20rpx;
@@ -72,8 +72,10 @@ swiper-item image {
 .goods-box .goods-list .goods-text{
     font-size: 32rpx;
     padding-left: 20rpx;
+    padding-bottom: 20rpx;
 }
 .goods-box .goods-list .goods-price {
    padding-left: 20rpx;
+   padding-bottom: 15rpx;
     color: #ed7b35;
 }

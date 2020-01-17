@@ -33,11 +33,19 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+          app.globalData.userInfo = res.userInfo;
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
-          })
+          });
+          console.log(res);
+          
+          //userInfo:nikeName,city,country,gender,avatarUrl,language,province
+          //由于getUserInfor是网络请求，可能会在onLoad之后才返回，加入callback防止这种情况
+          if(this.userInfoReadyCallback){
+              this.userInfoReadyCallback;
+          }
+
         }
       })
     }
