@@ -1,0 +1,8 @@
+
+<!-- wxs在视图层-->
+<wxs module="test" src="./test.wxs"></wxs>
+<view class="movable" change:prop="{{test.propObserver}}" prop="{{propValue}}" bindtouchmove="{{test.touchmove}}"></view>
+    
+
+<!--基础组件-->
+<tagname prop="value"></tagname>
